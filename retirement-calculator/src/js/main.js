@@ -81,8 +81,6 @@ const handlers = {
         calculator.pages.pg2.classList.remove('displayNone');
         handlers.updateClientAge();
         handlers.updateClientAnnualIncome();
-        // console.log(client);
-
       }
 
       if(e.target.id === 'nextBtn-2') {
@@ -90,8 +88,6 @@ const handlers = {
         calculator.pages.pg3.classList.remove('displayNone');
         handlers.updateClientCurrentRetirementSavings();
         handlers.updateClientPercentageAnnualRaises();
-        // console.log(client);
-
       }
 
       if(e.target.id === 'nextBtn-3') {
@@ -99,8 +95,6 @@ const handlers = {
         calculator.pages.pg4.classList.remove('displayNone');
         handlers.updateClientExpectedRetirementAge();
         handlers.updateClientExpectedRetirementLength();
-        // console.log(client);
-
       }
 
       if(e.target.id === 'nextBtn-4') {
@@ -125,7 +119,7 @@ const handlers = {
           type: "POST",
           url: "https://mandrillapp.com/api/1.0/messages/send.json",
           data: {
-            'key': <MANDRILL_API_KEY>,
+            'key': 'xWpoj3QqZHv7pDNIz1VJEg',
             'message': {
               'from_email': 'tim@devplum.com',
               'to': [
