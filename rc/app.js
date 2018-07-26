@@ -70,99 +70,83 @@ const client = {
 
 const handlers = {
 
-  // setupEventListeners: () => {
-  //   const form = document.getElementById('calculator');
-  //
-  //   form.addEventListener('click', (e) => {
-  //     e.preventDefault();
-  //
-  //     if(e.target.id === 'nextBtn-1') {
-  //       calculator.pages.pg1.classList.add('displayNone');
-  //       calculator.pages.pg2.classList.remove('displayNone');
-  //       handlers.updateClientAge();
-  //       handlers.updateClientAnnualIncome();
-  //     }
-  //
-  //     if(e.target.id === 'nextBtn-2') {
-  //       calculator.pages.pg2.classList.add('displayNone');
-  //       calculator.pages.pg3.classList.remove('displayNone');
-  //       handlers.updateClientCurrentRetirementSavings();
-  //       handlers.updateClientPercentageAnnualRaises();
-  //     }
-  //
-  //     if(e.target.id === 'nextBtn-3') {
-  //       calculator.pages.pg3.classList.add('displayNone');
-  //       calculator.pages.pg4.classList.remove('displayNone');
-  //       handlers.updateClientExpectedRetirementAge();
-  //       handlers.updateClientExpectedRetirementLength();
-  //     }
-  //
-  //     if(e.target.id === 'nextBtn-4') {
-  //       calculator.pages.pg4.classList.add('displayNone');
-  //       calculator.pages.pg5.classList.remove('displayNone');
-  //       handlers.updateClientPercentPreRetirementIncome();
-  //       handlers.updateClientTaxReturnBeforeRetirement();
-  //       handlers.updateClientTaxReturnAfterRetirement();
-  //     }
-  //
-  //     if(e.target.id === 'submitBtn') {
-  //       // calculator.pages.pg4.classList.add('displayNone');
-  //       handlers.updateClientFirstName();
-  //       handlers.updateClientLastName();
-  //       handlers.updateClientEmail();
-  //       handlers.updateClientPhone();
-  //       calculator.clientInfo.section.classList.remove('displayNone');
-  //       console.log(client);
-  //       console.log(JSON.stringify(client));
-  //
-  //       $.ajax({
-  //         type: "POST",
-  //         url: "https://mandrillapp.com/api/1.0/messages/send.json",
-  //         data: {
-  //           'key': 'xWpoj3QqZHv7pDNIz1VJEg',
-  //           'message': {
-  //             'from_email': 'tim@devplum.com',
-  //             'to': [
-  //               {
-  //                 'email': 'tim@devplum.com',
-  //                 'name': 'Plum Direct Marketing',
-  //                 'type': 'to'
-  //               },
-  //               {
-  //                 'email': client.email,
-  //                 'name': client.firstName + '' + client.lastName,
-  //                 'type': 'to'
-  //               }
-  //             ],
-  //             'autotext': 'true',
-  //             'subject': 'YOUR SUBJECT HERE!',
-  //             'html': JSON.stringify(client)
-  //           }
-  //         }
-  //       }).done(function(response) {
-  //         console.log(response); // if you're into that sorta thing
-  //       });
-  //
-  //
-  //     }
-  //
-  //   });
-  // },
+  setupEventListeners: () => {
+    const form = document.getElementById('calculator');
 
-  setupEventListeners: () =>  {
-    let pages = document.querySelectorAll('#calculator>div');
-    for (let i = 0; i < pages.length; i++) {
-      if (pages[i].style.display !== 'none') {
-        pages[i].style.display = 'none';
-        if (i === pages.length - 1) {
-          pages[0].style.display = 'block';
-          document.getElementById('clientInfo').style.display = 'block';
-        } else {
-          pages[i + 1].style.display = 'block';
-        }
-        break;
+    form.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      if(e.target.id === 'nextBtn-1') {
+        calculator.pages.pg1.classList.add('displayNone');
+        calculator.pages.pg2.classList.remove('displayNone');
+        handlers.updateClientAge();
+        handlers.updateClientAnnualIncome();
       }
-    }
+
+      if(e.target.id === 'nextBtn-2') {
+        calculator.pages.pg2.classList.add('displayNone');
+        calculator.pages.pg3.classList.remove('displayNone');
+        handlers.updateClientCurrentRetirementSavings();
+        handlers.updateClientPercentageAnnualRaises();
+      }
+
+      if(e.target.id === 'nextBtn-3') {
+        calculator.pages.pg3.classList.add('displayNone');
+        calculator.pages.pg4.classList.remove('displayNone');
+        handlers.updateClientExpectedRetirementAge();
+        handlers.updateClientExpectedRetirementLength();
+      }
+
+      if(e.target.id === 'nextBtn-4') {
+        calculator.pages.pg4.classList.add('displayNone');
+        calculator.pages.pg5.classList.remove('displayNone');
+        handlers.updateClientPercentPreRetirementIncome();
+        handlers.updateClientTaxReturnBeforeRetirement();
+        handlers.updateClientTaxReturnAfterRetirement();
+      }
+
+      if(e.target.id === 'submitBtn') {
+        // calculator.pages.pg4.classList.add('displayNone');
+        handlers.updateClientFirstName();
+        handlers.updateClientLastName();
+        handlers.updateClientEmail();
+        handlers.updateClientPhone();
+        calculator.clientInfo.section.classList.remove('displayNone');
+        console.log(client);
+        console.log(JSON.stringify(client));
+
+        $.ajax({
+          type: "POST",
+          url: "https://mandrillapp.com/api/1.0/messages/send.json",
+          data: {
+            'key': 'xWpoj3QqZHv7pDNIz1VJEg',
+            'message': {
+              'from_email': 'tim@devplum.com',
+              'to': [
+                {
+                  'email': 'tim@devplum.com',
+                  'name': 'Plum Direct Marketing',
+                  'type': 'to'
+                },
+                {
+                  'email': client.email,
+                  'name': client.firstName + '' + client.lastName,
+                  'type': 'to'
+                }
+              ],
+              'autotext': 'true',
+              'subject': 'YOUR SUBJECT HERE!',
+              'html': JSON.stringify(client)
+            }
+          }
+        }).done(function(response) {
+          console.log(response); // if you're into that sorta thing
+        });
+
+
+      }
+
+    });
   },
 
   updateClientAge: () => {
@@ -241,4 +225,4 @@ const handlers = {
 
 };
 
-// handlers.setupEventListeners(); // Setup event listeners for the form
+handlers.setupEventListeners(); // Setup event listeners for the form
