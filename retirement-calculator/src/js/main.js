@@ -1,18 +1,3 @@
-// const nextBtn1 = document.getElementById('nextBtn-1');
-// const nextBtn2 = document.getElementById('nextBtn-2');
-// nextBtn1.addEventListener('click', (e)=> {
-//   e.preventDefault();
-//
-//   const page1 = document.getElementById('page-1');
-//   const page2 = document.getElementById('page-2');
-//
-//
-//   page1.classList.add('displayNone');
-//   page2.classList.add('display');
-//
-// });
-
-
 const calculator = {
 
   nextBtn: {
@@ -20,13 +5,15 @@ const calculator = {
     btn2: document.getElementById('nextBtn-2'),
     btn3: document.getElementById('nextBtn-3'),
     btn4: document.getElementById('nextBtn-4'),
+    submitBtn: document.getElementById('submitBtn')
   },
 
   pages: {
     pg1: document.getElementById('page-1'),
     pg2: document.getElementById('page-2'),
     pg3: document.getElementById('page-3'),
-    pg4: document.getElementById('page-4')
+    pg4: document.getElementById('page-4'),
+    pg5: document.getElementById('page-5')
   },
 
   clientInput: {
@@ -38,10 +25,15 @@ const calculator = {
     expectedRetirementLength: document.getElementById('expectedRetirementLengthInput'),
     percentPreRetirementIncome: document.getElementById('percentPreRetirementIncomeInput'),
     taxReturnBeforeRetirement: document.getElementById('taxReturnBeforeRetirementInput'),
-    taxReturnAfterRetirement: document.getElementById('taxReturnAfterRetirementInput')
+    taxReturnAfterRetirement: document.getElementById('taxReturnAfterRetirementInput'),
+    firstName: document.getElementById('clientFirstNameInput'),
+    lastName: document.getElementById('clientLastNameInput'),
+    email: document.getElementById('clientEmailInput'),
+    phone: document.getElementById('clientPhoneInput')
   },
 
   clientInfo: {
+    section: document.getElementById('clientInfo'),
     age: document.getElementById('age'),
     annualIncome: document.getElementById('annualIncome'),
     currentRetirementSavings: document.getElementById('currentRetirementSavings'),
@@ -50,8 +42,13 @@ const calculator = {
     expectedRetirementLength: document.getElementById('expectedRetirementLength'),
     percentPreRetirementIncome: document.getElementById('percentPreRetirementIncome'),
     taxReturnBeforeRetirement: document.getElementById('taxReturnBeforeRetirement'),
-    taxReturnAfterRetirement: document.getElementById('taxReturnAfterRetirement')
-  }
+    taxReturnAfterRetirement: document.getElementById('taxReturnAfterRetirement'),
+    firstName: document.getElementById('clientFirstName'),
+    lastName: document.getElementById('clientLastName'),
+    email: document.getElementById('clientEmail'),
+    phone: document.getElementById('clientPhone')
+  },
+
 
 };
 
@@ -64,7 +61,11 @@ const client = {
   expectedRetirementLength: '', // 0 - 40
   percentPreRetirementIncome: '', // 0% - 100%
   taxReturnBeforeRetirement: '', // 0% - 10%
-  taxReturnAfterRetirement: '' // 0% - 10%
+  taxReturnAfterRetirement: '', // 0% - 10%
+  firstName: '',
+  lastName: '',
+  email: '',
+  phone: ''
 };
 
 const handlers = {
@@ -104,37 +105,77 @@ const handlers = {
 
       if(e.target.id === 'nextBtn-4') {
         calculator.pages.pg4.classList.add('displayNone');
+        calculator.pages.pg5.classList.remove('displayNone');
         handlers.updateClientPercentPreRetirementIncome();
         handlers.updateClientTaxReturnBeforeRetirement();
         handlers.updateClientTaxReturnAfterRetirement();
+      }
+
+      if(e.target.id === 'submitBtn') {
+        // calculator.pages.pg4.classList.add('displayNone');
+        handlers.updateClientFirstName();
+        handlers.updateClientLastName();
+        handlers.updateClientEmail();
+        handlers.updateClientPhone();
+        calculator.clientInfo.section.classList.remove('displayNone');
         console.log(client);
+        console.log(JSON.stringify(client));
+
+        $.ajax({
+          type: "POST",
+          url: "https://mandrillapp.com/api/1.0/messages/send.json",
+          data: {
+            'key': <MANDRILL_API_KEY>,
+            'message': {
+              'from_email': 'tim@devplum.com',
+              'to': [
+                {
+                  'email': 'tim@devplum.com',
+                  'name': 'Plum Direct Marketing',
+                  'type': 'to'
+                },
+                {
+                  'email': client.email,
+                  'name': client.firstName + '' + client.lastName,
+                  'type': 'to'
+                }
+              ],
+              'autotext': 'true',
+              'subject': 'YOUR SUBJECT HERE!',
+              'html': JSON.stringify(client)
+            }
+          }
+        }).done(function(response) {
+          console.log(response); // if you're into that sorta thing
+        });
+
+
       }
 
     });
-
   },
 
   updateClientAge: () => {
 
     client.age = calculator.clientInput.age.value;
-    calculator.clientInfo.age.innerText = 'Age: ' + calculator.clientInput.age.value * 2;
+    calculator.clientInfo.age.innerText = 'Age: ' + calculator.clientInput.age.value;
   },
 
   updateClientAnnualIncome: () => {
     client.annualIncome = calculator.clientInput.annualIncome.value;
-    calculator.clientInfo.annualIncome.innerText = 'Annual Income: ' + calculator.clientInput.annualIncome.value / 2;
+    calculator.clientInfo.annualIncome.innerText = 'Annual Income: $' + parseFloat(calculator.clientInput.annualIncome.value.replace(/,/g, ''));
 
   },
 
   updateClientCurrentRetirementSavings: () => {
     client.currentRetirementSavings = calculator.clientInput.currentRetirementSavings.value;
-    calculator.clientInfo.currentRetirementSavings.innerText = 'Current Retirement Savings: ' + calculator.clientInput.currentRetirementSavings.value;
+    calculator.clientInfo.currentRetirementSavings.innerText = 'Current Retirement Savings: $' + parseFloat(calculator.clientInput.currentRetirementSavings.value.replace(/,/g, ''));
 
   },
 
   updateClientPercentageAnnualRaises: () => {
     client.percentageAnnualRaises = calculator.clientInput.percentageAnnualRaises.value;
-    calculator.clientInfo.percentageAnnualRaises.innerText = 'Percentage of Annual Raises: ' + calculator.clientInput.percentageAnnualRaises.value;
+    calculator.clientInfo.percentageAnnualRaises.innerText = 'Percentage of Annual Raises: ' + parseFloat(calculator.clientInput.percentageAnnualRaises.value.replace(/,/g, '')) + '%';
 
   },
 
@@ -152,26 +193,42 @@ const handlers = {
 
   updateClientPercentPreRetirementIncome: () => {
     client.percentPreRetirementIncome = calculator.clientInput.percentPreRetirementIncome.value;
-    calculator.clientInfo.percentPreRetirementIncome.innerText = 'Percentage Pre-Retirement Income: ' + calculator.clientInput.percentPreRetirementIncome.value;
+    calculator.clientInfo.percentPreRetirementIncome.innerText = 'Percentage Pre-Retirement Income: $' + parseFloat(calculator.clientInput.percentPreRetirementIncome.value.replace(/,/g, '')) + '%';
 
 
   },
 
   updateClientTaxReturnBeforeRetirement: () => {
     client.taxReturnBeforeRetirement = calculator.clientInput.taxReturnBeforeRetirement.value;
-    calculator.clientInfo.taxReturnBeforeRetirement.innerText = 'Tax Returns Before Retirement: ' + calculator.clientInput.taxReturnBeforeRetirement.value;
+    calculator.clientInfo.taxReturnBeforeRetirement.innerText = 'Tax Returns Before Retirement: $' + parseFloat(calculator.clientInput.taxReturnBeforeRetirement.value.replace(/,/g, ''));
 
 
   },
 
   updateClientTaxReturnAfterRetirement: () => {
     client.taxReturnAfterRetirement = calculator.clientInput.taxReturnAfterRetirement.value;
-    calculator.clientInfo.taxReturnAfterRetirement.innerText = 'Tax Returns After Retirement: ' + calculator.clientInput.taxReturnAfterRetirement.value;
+    calculator.clientInfo.taxReturnAfterRetirement.innerText = 'Tax Returns After Retirement: $' + parseFloat(calculator.clientInput.taxReturnAfterRetirement.value.replace(/,/g, ''));
 
 
-  }
+  },
+  updateClientFirstName: () => {
+    client.firstName = calculator.clientInput.firstName.value;
+    calculator.clientInfo.firstName.innerText = 'First Name: ' + calculator.clientInput.firstName.value;
+  },
+
+  updateClientLastName: () => {
+    client.lastName = calculator.clientInput.lastName.value;
+    calculator.clientInfo.lastName.innerText = 'Last Name: ' + calculator.clientInput.lastName.value;
+  },
+  updateClientEmail: () => {
+    client.email = calculator.clientInput.email.value;
+    calculator.clientInfo.email.innerText = 'Email: ' + calculator.clientInput.email.value;
+  },
+  updateClientPhone: () => {
+    client.phone = calculator.clientInput.phone.value;
+    calculator.clientInfo.phone.innerText = 'Phone: ' + calculator.clientInput.phone.value;
+  },
 
 };
-
 
 handlers.setupEventListeners(); // Setup event listeners for the form
