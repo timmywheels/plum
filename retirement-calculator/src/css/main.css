@@ -105,6 +105,11 @@ textarea {
   margin: 0 auto;
 }
 
+input,
+label {
+  display: inline-block !important;
+}
+
 .calculator-container{
   background-color: #f5f5f5;
   border-radius: 5px;
@@ -113,23 +118,41 @@ textarea {
   max-width: 400px;
   display: block;
   box-shadow: 5px 5px 20px #ccc;
+  transition: box-shadow 0.3s ease-in-out;
+}
 
+.calculator-container:hover {
+  box-shadow: 2px 2px 10px #ccc;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.progress {
+  margin: 0 15px;
+}
+
+.progress-bar {
+  background-color: #919191;
+}
+
+.row {
+  margin-top: 50px;
 }
 
 .form-control{
   margin-bottom: 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
+#clientInfo {
+  padding: 50px 25px;
+  width: 400px;
+  display: block;
+  margin: 50px auto 0;
+  text-align: left;
+  border: 2px solid #dddddd;
+  background: #f5f5f5;
+  border-radius: 4px;
+  color: #aaa;
+}
 
 /* ==========================================================================
    Helper classes

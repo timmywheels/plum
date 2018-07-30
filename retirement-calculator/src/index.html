@@ -24,42 +24,50 @@
 
   <!-- Add your site or application content here -->
   <div class="container">
-    <div class="calculator-container">
+    <div class="row">
+      <div class="calculator-container col-md-12">
+        <h3 class="text-center">How Much Will Your Retirement Cost?</h3>
+        <div class="col-md-12">
+          <form id="calculator" method="post">
+            <div id="page-1" class="form-group form-horizontal">
+              <label>
+                <input id="annualIncomeInput" class="form-control" type="text" placeholder="Annual Income" required>
+              </label>
+              <input id="ageInput" class="form-control" type="text" placeholder="Current Age" required>
+              <button id="nextBtn-1" onclick="handlers.setupEventListeners()" class="nextBtn btn btn-primary btn-block" type="button">Next</button>
+            </div>
+            <div id="page-2" style="display: none;" class="form-group">
+              <input id="currentRetirementSavingsInput" class="form-control" type="text" placeholder="Current Retirement Savings" required>
+              <input id="percentageAnnualRaisesInput" class="form-control" type="text" placeholder="Percentage Annual Raises" required>
+              <button id="nextBtn-2" onclick="handlers.setupEventListeners()" class="nextBtn btn btn-primary btn-block" type="button">Next</button>
+            </div>
+            <div id="page-3" style="display: none;" class="form-group">
+              <input id="expectedRetirementAgeInput" class="form-control" type="text" placeholder="Expected Retirement Age" required>
+              <input  id="expectedRetirementLengthInput" class="form-control" type="text" placeholder="Expected Years in Retirement" required>
+              <button id="nextBtn-3" onclick="handlers.setupEventListeners()" class="nextBtn btn btn-primary btn-block" type="button">Next</button>
+            </div>
+            <div id="page-4" style="display: none;" class="form-group">
+              <input id="percentPreRetirementIncomeInput" class="form-control" type="text" placeholder="Percent Pre-Retirement Income" required>
+              <input id="taxReturnBeforeRetirementInput" class="form-control" type="text" placeholder="Tax Return Before Retirement" required>
+              <input id="taxReturnAfterRetirementInput" class="form-control" type="text" placeholder="Tax Return After Retirement" required>
+              <button id="nextBtn-4" onclick="handlers.setupEventListeners()" class="nextBtn btn btn-primary btn-block" type="button">Next</button>
+            </div>
+            <div id="page-5" style="display: none;" class="form-group">
+              <input id="clientFirstNameInput" class="form-control" type="text" placeholder="First Name" required>
+              <input id="clientLastNameInput" class="form-control" type="text" placeholder="Last Name" required>
+              <input id="clientEmailInput" class="form-control" type="text" placeholder="Email" required>
+              <input id="clientPhoneInput" class="form-control" type="text" placeholder="Phone" required>
+              <button id="submitBtn" onclick="handlers.setupEventListeners()" class="nextBtn btn btn-primary btn-block" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%"></div>
+        </div>
       <!--<img class="logo" src="img/plum-logo.svg">-->
-      <form id="calculator" method="post">
-        <h3 class="text-center">How Much Will Your Retirement Cost</h3>
-        <div id="page-1" class="form-group">
-          <input id="ageInput" class="form-control" type="text" placeholder="Current Age" required>
-          <input id="annualIncomeInput" class="form-control" type="text" placeholder="Annual Income" required>
-          <button id="nextBtn-1" onclick="handlers.setupEventListeners()" class="nextBtn btn btn-primary btn-block" type="button">Next</button>
-        </div>
-        <div id="page-2" style="display: none;" class="form-group">
-          <input id="currentRetirementSavingsInput" class="form-control" type="text" placeholder="Current Retirement Savings" required>
-          <input id="percentageAnnualRaisesInput" class="form-control" type="text" placeholder="Percentage Annual Raises" required>
-          <button id="nextBtn-2" onclick="handlers.setupEventListeners()" class="nextBtn btn btn-primary btn-block" type="button">Next</button>
-        </div>
-        <div id="page-3" style="display: none;" class="form-group">
-          <input id="expectedRetirementAgeInput" class="form-control" type="text" placeholder="Expected Retirement Age" required>
-          <input  id="expectedRetirementLengthInput" class="form-control" type="text" placeholder="Expected Years in Retirement" required>
-          <button id="nextBtn-3" onclick="handlers.setupEventListeners()" class="nextBtn btn btn-primary btn-block" type="button">Next</button>
-        </div>
-        <div id="page-4" style="display: none;" class="form-group">
-          <input id="percentPreRetirementIncomeInput" class="form-control" type="text" placeholder="Percent Pre-Retirement Income" required>
-          <input id="taxReturnBeforeRetirementInput" class="form-control" type="text" placeholder="Tax Return Before Retirement" required>
-          <input id="taxReturnAfterRetirementInput" class="form-control" type="text" placeholder="Tax Return After Retirement" required>
-          <button id="nextBtn-4" onclick="handlers.setupEventListeners()" class="nextBtn btn btn-primary btn-block" type="button">Next</button>
-        </div>
-        <div id="page-5" style="display: none;" class="form-group">
-          <input id="clientFirstNameInput" class="form-control" type="text" placeholder="First Name" required>
-          <input id="clientLastNameInput" class="form-control" type="text" placeholder="Last Name" required>
-          <input id="clientEmailInput" class="form-control" type="text" placeholder="Email" required>
-          <input id="clientPhoneInput" class="form-control" type="text" placeholder="Phone" required>
-          <button id="submitBtn" onclick="handlers.setupEventListeners()" class="nextBtn btn btn-primary btn-block" type="submit">Submit</button>
-        </div>
+    </div>
 
-      </form>
-
-      <div id="clientInfo"  style="display: none;">
+      <div id="clientInfo" class="col-md-10" style="display: none;" >
         <p id="age">Age: </p>
         <p id="annualIncome">Annual Income: </p>
         <p id="currentRetirementSavings">Current Retirement Savings: </p>
@@ -73,10 +81,12 @@
         <p id="clientLastName">Last Name: </p>
         <p id="clientEmail">Email: </p>
         <p id="clientPhone">Phone: </p>
-
       </div>
+
+
     </div>
   </div>
+
 
 
 
