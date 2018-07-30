@@ -2,45 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e33a005-1dde-47fd-b844-4b68f449deac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/rc-2/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rc-2/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rc-2/.idea/rc-2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rc-2/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rc-2/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-rc/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-rc/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-rc/.idea/react-rc.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-rc/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rc/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rc/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rc/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/retirement-calc.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/retirement-calc/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/retirement-calc/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/retirement-calc/admin/class-retirement-calc-admin.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/retirement-calc/admin/css/retirement-calc-admin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/retirement-calc/admin/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/retirement-calc/admin/js/retirement-calc-admin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/retirement-calc/admin/partials/retirement-calc-admin-display.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/retirement-calc/includes/class-retirement-calc-activator.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/retirement-calc/includes/class-retirement-calc-deactivator.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/retirement-calc/includes/class-retirement-calc-i18n.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/retirement-calc/includes/class-retirement-calc-loader.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/retirement-calc/includes/class-retirement-calc.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/retirement-calc/includes/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/retirement-calc/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/retirement-calc/languages/retirement-calc.pot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/retirement-calc/public/class-retirement-calc-public.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/retirement-calc/public/css/retirement-calc-public.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/retirement-calc/public/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/retirement-calc/public/js/retirement-calc-public.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/retirement-calc/public/partials/retirement-calc-public-display.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/retirement-calc/retirement-calc.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/retirement-calc/uninstall.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/retirement-calculator/src/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/retirement-calculator/src/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/retirement-calculator/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/retirement-calculator/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/retirement-calculator/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/retirement-calculator/src/js/main.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -89,7 +51,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="306" />
-          <entry key="html" value="973" />
+          <entry key="html" value="987" />
           <entry key="js" value="1733" />
           <entry key="md" value="115" />
         </counts>
@@ -97,7 +59,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="306" />
-          <entry key="HTML" value="973" />
+          <entry key="HTML" value="987" />
           <entry key="JavaScript" value="1733" />
           <entry key="Markdown" value="115" />
         </counts>
@@ -111,8 +73,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/retirement-calculator/src/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="227">
-                  <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+                <state relative-caret-position="212">
+                  <caret line="31" column="64" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
                   <folding>
                     <element signature="n#style#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -139,8 +101,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/retirement-calculator/src/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="366">
-                  <caret line="274" column="24" lean-forward="true" selection-start-line="274" selection-start-column="24" selection-end-line="274" selection-end-column="24" />
+                <state relative-caret-position="666">
+                  <caret line="294" column="32" selection-start-line="294" selection-start-column="32" selection-end-line="294" selection-end-column="32" />
                 </state>
               </provider>
             </entry>
@@ -165,8 +127,8 @@
         <option value="$PROJECT_DIR$/retirement-calc-v2/style.scss" />
         <option value="$PROJECT_DIR$/retirement-calc-v2/app.js" />
         <option value="$PROJECT_DIR$/retirement-calculator/src/css/main.css" />
-        <option value="$PROJECT_DIR$/retirement-calculator/src/index.html" />
         <option value="$PROJECT_DIR$/retirement-calculator/src/js/main.js" />
+        <option value="$PROJECT_DIR$/retirement-calculator/src/index.html" />
       </list>
     </option>
   </component>
@@ -184,13 +146,11 @@
   </component>
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/gutenberg-blocks/wp-content/plugins/block-examples/01-basic-block/node_modules" />
-    <handled-path value="$PROJECT_DIR$/react-rc/node_modules" />
     <handled-path value="$PROJECT_DIR$/retirement-calculator/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/gutenberg-blocks/wp-content/plugins/block-examples/01-basic-block/package.json" />
-      <path value="$PROJECT_DIR$/react-rc/package.json" />
       <path value="$PROJECT_DIR$/retirement-calculator/package.json" />
     </packageJsonPaths>
   </component>
@@ -212,11 +172,6 @@
             <path>
               <item name="plum-git" type="b2602c69:ProjectViewProjectNode" />
               <item name="plum-git" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="plum-git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="plum-git" type="462c0819:PsiDirectoryNode" />
-              <item name="retirement-calculator" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -299,12 +254,12 @@
       <workItem from="1532960493803" duration="86000" />
       <workItem from="1532960623301" duration="1041000" />
       <workItem from="1532962532753" duration="2117000" />
-      <workItem from="1532966334838" duration="1542000" />
+      <workItem from="1532966334838" duration="1632000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24793000" />
+    <option name="totallyTimeSpent" value="24883000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1194" y="129" width="1356" height="1232" extended-state="0" />
@@ -334,6 +289,18 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/retirement-calculator/src/js/main.js</url>
+          <line>274</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/retirement-calculator/calculator.html" />
@@ -386,23 +353,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/retirement-calculator/src/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="294" column="32" selection-start-line="294" selection-start-column="32" selection-end-line="294" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/retirement-calculator/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+        <state relative-caret-position="212">
+          <caret line="31" column="64" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
           <folding>
             <element signature="n#style#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#4;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/retirement-calculator/src/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="274" column="24" lean-forward="true" selection-start-line="274" selection-start-column="24" selection-end-line="274" selection-end-column="24" />
         </state>
       </provider>
     </entry>
