@@ -15,6 +15,7 @@
 
   <!--<link rel="stylesheet" href="css/normalize.css">-->
   <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
 </head>
 
 <body>
@@ -30,32 +31,32 @@
         <div class="col-md-12">
           <form id="calculator" method="post">
             <div id="page-1" class="form-group form-horizontal">
-                <input id="annualIncomeInput" class="form-control" type="text" placeholder="Annual Income" required>
               <input id="ageInput" class="form-control" type="text" placeholder="Current Age" required>
-              <button id="nextBtn-1" onclick="handlers.setupEventListeners()" class="nextBtn btn btn-primary btn-block" type="button">Next</button>
+              <input id="annualIncomeInput" class="form-control" type="text" placeholder="Annual Income" required>
+              <button id="nextBtn-1" class="nextBtn btn btn-primary btn-block" type="button">Next</button>
             </div>
             <div id="page-2" style="display: none;" class="form-group">
               <input id="currentRetirementSavingsInput" class="form-control" type="text" placeholder="Current Retirement Savings" required>
               <input id="percentageAnnualRaisesInput" class="form-control" type="text" placeholder="Percentage Annual Raises" required>
-              <button id="nextBtn-2" onclick="handlers.setupEventListeners()" class="nextBtn btn btn-primary btn-block" type="button">Next</button>
+              <button id="nextBtn-2" class="nextBtn btn btn-primary btn-block" type="button">Next</button>
             </div>
             <div id="page-3" style="display: none;" class="form-group">
               <input id="expectedRetirementAgeInput" class="form-control" type="text" placeholder="Expected Retirement Age" required>
               <input  id="expectedRetirementLengthInput" class="form-control" type="text" placeholder="Expected Years in Retirement" required>
-              <button id="nextBtn-3" onclick="handlers.setupEventListeners()" class="nextBtn btn btn-primary btn-block" type="button">Next</button>
+              <button id="nextBtn-3" class="nextBtn btn btn-primary btn-block" type="button">Next</button>
             </div>
             <div id="page-4" style="display: none;" class="form-group">
               <input id="percentPreRetirementIncomeInput" class="form-control" type="text" placeholder="Percent Pre-Retirement Income" required>
               <input id="taxReturnBeforeRetirementInput" class="form-control" type="text" placeholder="Tax Return Before Retirement" required>
               <input id="taxReturnAfterRetirementInput" class="form-control" type="text" placeholder="Tax Return After Retirement" required>
-              <button id="nextBtn-4" onclick="handlers.setupEventListeners()" class="nextBtn btn btn-primary btn-block" type="button">Next</button>
+              <button id="nextBtn-4" class="nextBtn btn btn-primary btn-block" type="button">Next</button>
             </div>
             <div id="page-5" style="display: none;" class="form-group">
               <input id="clientFirstNameInput" class="form-control" type="text" placeholder="First Name" required>
               <input id="clientLastNameInput" class="form-control" type="text" placeholder="Last Name" required>
               <input id="clientEmailInput" class="form-control" type="text" placeholder="Email" required>
               <input id="clientPhoneInput" class="form-control" type="text" placeholder="Phone" required>
-              <button id="submitBtn" onclick="handlers.setupEventListeners()" class="nextBtn btn btn-primary btn-block" type="submit">Submit</button>
+              <button id="submitBtn" class="nextBtn btn btn-primary btn-block" data-toggle="modal" data-target="#infoModal" type="button">Submit</button>
             </div>
           </form>
         </div>
@@ -65,32 +66,116 @@
       <!--<img class="logo" src="img/plum-logo.svg">-->
     </div>
 
-      <div id="clientInfo" class="col-md-10" style="display: none;" >
-        <p id="age">Age: </p>
-        <p id="annualIncome">Annual Income: </p>
-        <p id="currentRetirementSavings">Current Retirement Savings: </p>
-        <p id="percentageAnnualRaises">Percentage of Annual Raises: </p>
-        <p id="expectedRetirementAge">Expected Retirement Age: </p>
-        <p id="expectedRetirementLength">Expected Retirement Length: </p>
-        <p id="percentPreRetirementIncome">Percentage Pre-Retirement Income: </p>
-        <p id="taxReturnBeforeRetirement">Tax Returns Before Retirement: </p>
-        <p id="taxReturnAfterRetirement">Tax Returns After Retirement: </p>
-        <p id="clientFirstName">First Name: </p>
-        <p id="clientLastName">Last Name: </p>
-        <p id="clientEmail">Email: </p>
-        <p id="clientPhone">Phone: </p>
-      </div>
-
-
+      <!--<div id="clientInfo" class="col-md-10" style="display: none;" >-->
+        <!--<p id="age">Age: </p>-->
+        <!--<p id="annualIncome">Annual Income: </p>-->
+        <!--<p id="currentRetirementSavings">Current Retirement Savings: </p>-->
+        <!--<p id="percentageAnnualRaises">Percentage of Annual Raises: </p>-->
+        <!--<p id="expectedRetirementAge">Expected Retirement Age: </p>-->
+        <!--<p id="expectedRetirementLength">Expected Retirement Length: </p>-->
+        <!--<p id="percentPreRetirementIncome">Percentage Pre-Retirement Income: </p>-->
+        <!--<p id="taxReturnBeforeRetirement">Tax Returns Before Retirement: </p>-->
+        <!--<p id="taxReturnAfterRetirement">Tax Returns After Retirement: </p>-->
+        <!--<p id="clientFirstName">First Name: </p>-->
+        <!--<p id="clientLastName">Last Name: </p>-->
+        <!--<p id="clientEmail">Email: </p>-->
+        <!--<p id="clientPhone">Phone: </p>-->
+      <!--</div>-->
     </div>
   </div>
 
 
 
+  <!-- Button trigger modal -->
+  <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">-->
+    <!--Launch demo modal-->
+  <!--</button>-->
 
-  <!--<script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>-->
-  <!--<script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js" integrity="{{JQUERY_SRI_HASH}}" crossorigin="anonymous"></script>-->
+  <!-- Modal -->
+  <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Retirement Savings Report</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="clientInfo" class="container">
+            <h4><p id="firstNameResult" style="display: inline-block"></p> <p id="lastNameResult" style="display: inline-block"></p><p style="display: inline-block">'s Retirement Savings Report</p></h4>
+            <div class="row">
+              <div class="col-md-9">
+                <p>The annual income that you will need in your first year of retirement:</p>
+              </div>
+              <div class="col-md-3">
+                <p id="annualIncomeResult" class="reportResult">$0</p>
+              </div>
+
+              <div class="col-md-9">
+                <p>When you begin retirement, you will need to have the following amount saved:</p>
+              </div>
+              <div class="col-md-3">
+                <p id="beginRetirementAmountResult" class="reportResult">$0</p>
+              </div>
+
+              <div class="col-md-9">
+                <p>Assuming no additional contributions, your current savings will grow to:</p>
+              </div>
+              <div class="col-md-3">
+                <p id="currentSavingsGrowthResult" class="reportResult">$0</p>
+              </div>
+
+              <div class="col-md-9">
+                <p>Without additional savings, you will have a shortfall of:</p>
+              </div>
+              <div class="col-md-3">
+                <p id="shortfallResult" class="reportResult">$0</p>
+              </div>
+
+              <div class="col-md-9">
+                <p>You will need to save the following percentage of your salary each year:</p>
+              </div>
+              <div class="col-md-3">
+                <p id="salaryPercentageResult" class="reportResult">$0</p>
+              </div>
+
+              <div class="col-md-9">
+                <p>In the first year, this works out to:</p>
+              </div>
+              <div class="col-md-3">
+                <p id="endResult" class="reportResult">$0</p>
+              </div>
+
+            </div>
+
+            <!--<p id="age">Age: </p>-->
+            <!--<p id="annualIncome">Annual Income: </p>-->
+            <!--<p id="currentRetirementSavings">Current Retirement Savings: </p>-->
+            <!--<p id="percentageAnnualRaises">Percentage of Annual Raises: </p>-->
+            <!--<p id="expectedRetirementAge">Expected Retirement Age: </p>-->
+            <!--<p id="expectedRetirementLength">Expected Retirement Length: </p>-->
+            <!--<p id="percentPreRetirementIncome">Percentage Pre-Retirement Income: </p>-->
+            <!--<p id="taxReturnBeforeRetirement">Tax Returns Before Retirement: </p>-->
+            <!--<p id="taxReturnAfterRetirement">Tax Returns After Retirement: </p>-->
+            <!--<p id="clientFirstName">First Name: </p>-->
+            <!--<p id="clientLastName">Last Name: </p>-->
+            <!--<p id="clientEmail">Email: </p>-->
+            <!--<p id="clientPhone">Phone: </p>-->
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Email Me My Report</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
 

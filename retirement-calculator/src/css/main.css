@@ -90,6 +90,39 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+body {
+  font-family: 'Varela Round', sans-serif;
+  outline: none;
+  height: 100vh;
+  width: 100vw;
+  background: url('../img/circle-bg.jpg') no-repeat fixed;
+  background-size: cover;
+
+}
+
+h3, h5 {
+  color: #384047;
+}
+
+button {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-primary {
+  background-color: #5dd07f;
+  border-color: #5dd07f;
+}
+
+.btn-primary:hover {
+  background-color: #5dd07fb0;
+  border-color: #5dd07fb0;
+}
+
+.btn-primary:focus {
+  box-shadow: none;
+}
+
 .displayNone{
   display: none !important;
 }
@@ -105,6 +138,25 @@ textarea {
   margin: 0 auto;
 }
 
+.modal-header {
+  border-bottom: none;
+  text-align: center;
+  background: #5dd07f;
+}
+
+.modal-header h5 {
+  color: #fff;
+}
+
+.modal-dialog {
+  max-width: 800px;
+}
+
+.modal-body .col-md-3 {
+  border-left: 2px solid #ddd;
+}
+
+
 input,
 label {
   display: inline-block !important;
@@ -114,7 +166,7 @@ label {
   background-color: #f5f5f5;
   border-radius: 5px;
   padding: 20px;
-  margin: 10% auto 0;
+  margin: 15% auto 0;
   max-width: 400px;
   display: block;
   box-shadow: 5px 5px 20px #ccc;
@@ -131,7 +183,7 @@ label {
 }
 
 .progress-bar {
-  background-color: #919191;
+  background-color: #607d8b;
 }
 
 .row {
@@ -144,14 +196,20 @@ label {
 
 #clientInfo {
   padding: 50px 25px;
-  width: 400px;
+  /*width: 400px;*/
   display: block;
-  margin: 50px auto 0;
+  width: 100%;
+  /*margin: 50px auto 0;*/
   text-align: left;
-  border: 2px solid #dddddd;
-  background: #f5f5f5;
+  /*border: 2px solid #dddddd;*/
+  /*background: #f5f5f5;*/
   border-radius: 4px;
   color: #aaa;
+}
+
+.reportResult {
+  color: #5dd07f;
+  font-weight: 900;
 }
 
 /* ==========================================================================
